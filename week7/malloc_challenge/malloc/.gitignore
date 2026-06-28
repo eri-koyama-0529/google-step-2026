@@ -1,0 +1,6 @@
+# mallocされるsizeの出力結果
+output.txt
+# mallocされるsizeを確認する用のコード
+analyze_output.py
+
+*.bin
