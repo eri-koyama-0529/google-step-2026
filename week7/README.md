@@ -64,4 +64,4 @@ Utilization [%] |              15 =>              72
 
 - まず、mallocのサイズの分布を調べてみると以下の通りになる。
 
-![Mallocの配置分布](/google-step-2026/week7/malloc_challenge/malloc/malloc_distribution_detailed.png)
+![Mallocの配置分布](malloc_challenge/malloc/malloc_distribution_detailed.png)
