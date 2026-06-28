@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 
 //
 // Interfaces to get memory pages from OS
@@ -75,14 +76,35 @@ void my_initialize() {
 // 4000. You are not allowed to use any library functions other than
 // mmap_from_system() / munmap_to_system().
 void *my_malloc(size_t size) {
+  // sizeを確認する
+  printf("%d\n", size);
   my_metadata_t *metadata = my_heap.free_head;
   my_metadata_t *prev = NULL;
   // First-fit: Find the first free slot the object fits.
   // TODO: Update this logic to Best-fit!
-  while (metadata && metadata->size < size) {
-    prev = metadata;
-    metadata = metadata->next;
+
+  // ↓BestFitへ変更
+  my_metadata_t *best_srot = NULL; // 暫定で一番十分な大きさの空き領域のうち最も小さいものを格納する
+  size_t min_best_size = SIZE_MAX; // 暫定のサイズの初期値は無限大にする
+  my_metadata_t *best_prev = NULL; //best_srotの一つ前を格納する
+
+  // int index = 0;  //debug用変数
+  while (metadata) { // metadataがある間繰り返す
+    // index++;
+    // if (index % 1000 == 0){
+    //   printf("【DEBUG】%d\n",index);
+    // }
+    // 十分な大きさがある かつ 暫定のsrotよりサイズが小さいとき更新
+    if (size <= metadata->size && metadata->size < min_best_size){
+      min_best_size = metadata->size;
+      best_srot = metadata;
+      best_prev = prev;
+    }
+    prev = metadata; // 一つ前を保存
+    metadata = metadata->next; //次のsrotへ
   }
+  prev = best_prev;
+  metadata = best_srot;
   // now, metadata points to the first free slot
   // and prev is the previous entry.
 
