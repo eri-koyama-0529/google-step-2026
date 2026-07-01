@@ -1,6 +1,8 @@
 # ポインタ百マス計算を解いた結果
 
-[cpointer100_v2.pdf](https://github.com/user-attachments/files/29552017/cpointer100_v2.pdf)
+<div align="center">
+  <img src="my_cpointer100.jpg" width="50%">
+</div>
 
 ## 補足：C言語の式と意味の対応表
 
