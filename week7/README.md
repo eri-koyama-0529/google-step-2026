@@ -1,24 +1,24 @@
 # week7 assigment
 
-実行メモ
+## 結果一覧
 
-``` 
-cd google-step-2026/week7/
+| Challenge | 評価項目 | simple_malloc | my_malloc (BestFitのみ) | my_malloc (BestFit+FreeLitBin) | my_malloc (さらに右結合) |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| **Challenge #1** | Time [ms] | 13 | 1381 | 512 | 501 |
+| | Utilization [%] | 70 | 70 | 70 | 55 |
+| **Challenge #2** | Time [ms] | 17 | 537 | 229 | 191 |
+| | Utilization [%] | 40 | 39 | 39 | 27 |
+| **Challenge #3** | Time [ms] | 139 | 796 | 115 | 232 |
+| | Utilization [%] | 8 | 51 | 51 | 40 |
+| **Challenge #4** | Time [ms] | 35370 | 11270 | 244 | 693 |
+| | Utilization [%] | 16 | 72 | 72 | 75 |
+| **Challenge #5** | Time [ms] | 18478 | 7200 | 239 | 591 |
+| | Utilization [%] | 15 | 72 | 72 | 74 |
 
-# move into malloc dir
-cd malloc_challenge
-cd malloc
 
-# build
-make
-
-# run a benchmark (for score board)
-make run
-
-```
 ## 目次
-* [1. Best Fitにするために](#1-best-fitにするために)
-* [2. Freelist binの実装](#2-freelist-binの実装)
+* [1. Best Fitにするために](https://github.com/eri-koyama-0529/google-step-2026/tree/main/week7#best-fit%E3%81%AB%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AB)
+* [2. Freelist binの実装](https://github.com/eri-koyama-0529/google-step-2026/tree/main/week7#freelist-bin%E3%81%AE%E5%AE%9F%E8%A3%85)
 
 
 ## Best Fitにするために
