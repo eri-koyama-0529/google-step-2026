@@ -1,5 +1,5 @@
 # mallocされるsizeの出力結果
-output.txt
+*.txt
 # mallocされるsizeを確認する用のコード
 analyze_output.py
 
